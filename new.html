@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Navigation Menu</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #151515;
+  }
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+  }
+  /* .navbar a:hover {
+    color: #ff8c00;
+  } */
+  .content {
+    padding-top: 80px; /* Adjust for the fixed navbar */
+    text-align: center;
+    font-size: 24px;
+  }
+  .section {
+    height: 800px;
+    background-color: #1B1A55;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  /* To add image in the background */
+  /* #home {
+    background-image: url(); 
+  }
+  #about {
+    background-image: url(); 
+  }
+  #services {
+    background-image: url();
+  }
+  #contact {
+    background-image: url();
+  } */
+</style>
+</head>
+<body>
+<div class="navbar" id="navbar">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#contact">Contact</a>
+</div>
+<div class="content">
+    <div class="section" id="home">
+      <h2>Home</h2>
+      <p>Welcome to our website! We offer a wide range of products and services to meet your needs.</p>
+      <p>Explore our website to learn more about what we offer and how we can help you.</p>
+    </div>
+    <div class="section" id="about">
+      <h2>About Us</h2>
+      <p>We are a company dedicated to providing top-notch services. With years of experience in the industry, we strive to deliver exceptional results to our clients.</p>
+      <p>Our team consists of highly skilled professionals who are passionate about what they do.</p>
+    </div>
+    <div class="section" id="services">
+      <h2>Our Services</h2>
+      <p>Check out the services we offer. From consulting to implementation, we have you covered.</p>
+      <p>Our services include:</p>
+      <div style="text-align: ;">
+        <div style="text-align: left;" >
+            <ul>
+                <li>Consulting</li>
+                <li>Web Development</li>
+                <li>Graphic Design</li>
+                <li>Marketing</li>
+                <li>and much more...</li>
+              </ul>
+        </div>
+      </div>
+    </div>
+    <div class="section" id="contact">
+      <h2>Contact Us</h2>
+      <p>Get in touch with us for inquiries or assistance. We are here to help you!</p>
+      <p>Feel free to reach out to us via phone, email, or through the contact form on our website.</p>
+    </div>
+  </div>
+
+<script>
+  window.addEventListener('scroll', function() {
+    var navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.style.backgroundColor = '#535C91'; // Change background color when scrolled
+    } else {
+      navbar.style.backgroundColor = '#393E46';
+    }
+  });
+
+  var navLinks = document.querySelectorAll('.navbar a');
+  navLinks.forEach(function(link) {
+    link.addEventListener('mouseover', function() {
+      this.style.color = '#AE445A'; // Change font color when hovered over
+    });
+    link.addEventListener('mouseout', function() {
+      this.style.color = '#fff'; 
+    });
+  });
+</script>
+</body>
+</html>
